@@ -1,4 +1,4 @@
-int atoi(char *str)
+int ft_atoi(char *str)
 {
     int i;
     int sign;
@@ -9,10 +9,14 @@ int atoi(char *str)
     res = 0;
     while (str[i] == ' ')
         i++;
-    if (str[i] == '+')
+    if (str[i] == '+') {
         sign = 1;
-    if (str[i] == '-')
+        i++;
+    }
+    if (str[i] == '-') {
         sign = -1;
+        i++;
+    }
     while (str[i])
     {
         if (str[i] >= '0' && str[i] <= '9')
@@ -21,7 +25,8 @@ int atoi(char *str)
             res += str[i] - 48;
         }
         else
-            return (sign * res);
+            return sign * res;
         i++;
     }
+    return (sign * res);
 }
