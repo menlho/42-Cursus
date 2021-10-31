@@ -21,7 +21,7 @@ int atoi(char *str)
             res += str[i] - 48;
         }
         else
-            return res;
+            return (sign * res);
         i++;
     }
 }
